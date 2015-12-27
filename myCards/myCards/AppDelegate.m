@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ReceiveViewController.h"
+#import "CardsViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //1.创建窗口(window)
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    //2.显示窗口
+    [self.window makeKeyAndVisible];
+    
+    //3.显示贺卡收件人界面
+    ReceiveViewController * rvViewController = [[ReceiveViewController alloc]init];
+    UINavigationController * nv = [[UINavigationController alloc]initWithRootViewController:rvViewController];
+    self.window.rootViewController = nv;
+    
+    
     return YES;
 }
 
